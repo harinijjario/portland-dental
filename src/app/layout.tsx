@@ -1,20 +1,52 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Portland Dental Practice | Premium Dental Care",
+  description:
+    "Portland Dental Practice offers bespoke dental treatments with a commitment to clinical excellence and patient comfort. Book an assessment today.",
+  icons: {
+    icon: "/Portland_Tooth_Logo.jpg",
+    apple: "/Portland_Tooth_Logo.jpg",
+  },
+  openGraph: {
+    title: "Portland Dental Practice | Premium Dental Care",
+    description:
+      "Bespoke dental treatments with a commitment to clinical excellence and patient comfort. Serving Portland with personalised care.",
+    siteName: "Portland Dental Practice",
+    images: [
+      {
+        url: "/Portland_Dental_Practice.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Portland Dental Practice",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portland Dental Practice | Premium Dental Care",
+    description:
+      "Bespoke dental treatments with a commitment to clinical excellence and patient comfort.",
+    images: ["/Portland_Dental_Practice.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -24,8 +56,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="en-GB"
+      className={`${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

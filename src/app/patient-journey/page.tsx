@@ -29,23 +29,36 @@ export default function PatientJourneyPage() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
-        className="bg-white py-32 pt-40"
+        className="bg-white pb-16 pt-8 md:pt-10"
       >
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="font-sans text-xs font-medium uppercase tracking-[0.3em] text-brand">
-            YOUR JOURNEY
-          </p>
+        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
+            {/* Image — top on mobile, right on desktop */}
+            <ImagePlaceholder
+              prompt="A patient walking through the front door of a beautifully designed dental practice. Warm greeting from reception staff. Natural light, welcoming atmosphere, editorial quality photography."
+              label="Your Journey Begins"
+              aspectRatio="aspect-[4/3]"
+              className="lg:order-2"
+            />
 
-          <h1 className="mt-6 font-display text-5xl leading-[1.1] text-foreground md:text-6xl">
-            From First Visit to
-            {"\n"}Lasting Confidence
-          </h1>
+            {/* Content — below image on mobile, left on desktop */}
+            <div className="mt-10 lg:order-1 lg:mt-0">
+              <p className="font-sans text-xs font-medium uppercase tracking-[0.3em] text-brand">
+                YOUR JOURNEY
+              </p>
 
-          <p className="mx-auto mt-8 max-w-2xl font-sans text-lg leading-relaxed text-muted-foreground">
-            We have designed every step of your experience to be seamless,
-            comfortable, and reassuring. Here is what you can expect when you
-            visit Portland Dental Practice.
-          </p>
+              <h1 className="mt-6 font-display text-5xl leading-[1.1] text-foreground md:text-6xl">
+                From First Visit to
+                {"\n"}Lasting Confidence
+              </h1>
+
+              <p className="mt-8 max-w-lg font-sans text-lg leading-relaxed text-muted-foreground">
+                We have designed every step of your experience to be seamless,
+                comfortable, and reassuring. Here is what you can expect when you
+                visit Portland Dental Practice.
+              </p>
+            </div>
+          </div>
         </div>
       </motion.section>
 
@@ -187,6 +200,25 @@ export default function PatientJourneyPage() {
               </div>
             </div>
           </div>
+        </div>
+      </motion.section>
+
+      {/* ─── INSPIRATIONAL QUOTE ─── */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInUp}
+        className="bg-brand py-24"
+      >
+        <div className="mx-auto max-w-4xl px-6 text-center md:px-12 lg:px-20">
+          <p className="font-display text-3xl leading-snug text-white md:text-4xl lg:text-5xl">
+            &ldquo;Every smile we create begins with trust, and every
+            relationship we build is founded on care.&rdquo;
+          </p>
+          <p className="mt-8 text-sm font-medium tracking-wide text-white/70">
+            DR. JAMES HARTLEY &mdash; PRINCIPAL DENTIST
+          </p>
         </div>
       </motion.section>
 

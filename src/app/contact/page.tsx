@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
@@ -48,26 +49,38 @@ export default function ContactPage() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="bg-white py-32 pt-40">
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="mx-auto max-w-3xl px-6 text-center"
-          >
-            <p className="text-xs font-medium tracking-[0.3em] text-brand">
-              CONTACT US
-            </p>
-            <h1 className="mt-6 font-display text-5xl leading-[1.1] md:text-6xl">
-              Get in Touch
-            </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              We would love to hear from you. Whether you have a question about
-              our treatments or would like to book an assessment, our team is
-              here to help.
-            </p>
-          </motion.div>
+        <section className="bg-white pb-16 pt-8 md:pt-10">
+          <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-16"
+            >
+              {/* Left — Image */}
+              <ImagePlaceholder
+                prompt="A friendly dental receptionist handing over a welcome pack to a new patient at a sleek, modern reception desk. Warm smiles, natural light, contemporary interior with blue accents. Editorial photography."
+                label="Get in Touch"
+                aspectRatio="aspect-[4/3]"
+              />
+
+              {/* Right — Content */}
+              <div className="mt-10 lg:mt-0">
+                <p className="text-xs font-medium tracking-[0.3em] text-brand">
+                  CONTACT US
+                </p>
+                <h1 className="mt-6 font-display text-5xl leading-[1.1] md:text-6xl">
+                  Get in Touch
+                </h1>
+                <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
+                  We would love to hear from you. Whether you have a question about
+                  our treatments or would like to book an assessment, our team is
+                  here to help.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </section>
 
         {/* ── Contact Content ── */}
@@ -265,7 +278,7 @@ export default function ContactPage() {
         </section>
 
         {/* ── Reassurance — What to Expect ── */}
-        <section className="bg-white py-24">
+        <section className="bg-brand py-24">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
@@ -273,7 +286,7 @@ export default function ContactPage() {
             viewport={{ once: true, margin: "-80px" }}
             className="mx-auto max-w-4xl px-6"
           >
-            <h2 className="text-center font-display text-3xl leading-[1.15] md:text-4xl">
+            <h2 className="text-center font-display text-3xl leading-[1.15] text-white md:text-4xl">
               What to Expect
             </h2>
 
@@ -287,16 +300,40 @@ export default function ContactPage() {
                   viewport={{ once: true, margin: "-80px" }}
                   className="text-center"
                 >
-                  <span className="font-display text-4xl text-brand/20">
+                  <span className="font-display text-4xl text-white/20">
                     {item.number}
                   </span>
-                  <h3 className="mt-4 text-lg font-medium">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <h3 className="mt-4 text-lg font-medium text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">
                     {item.description}
                   </p>
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+        </section>
+
+        {/* ── Final CTA ── */}
+        <section className="bg-brand-dark py-24">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="mx-auto max-w-3xl px-6 text-center"
+          >
+            <h2 className="font-display text-4xl leading-[1.15] text-white md:text-5xl">
+              Your New Smile Starts Here
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+              Take the first step today. Our team is ready to welcome you.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex bg-white px-8 py-3.5 text-sm font-medium tracking-wide text-brand-dark transition-colors duration-300 hover:bg-white/90"
+            >
+              Request a Consultation
+            </Link>
           </motion.div>
         </section>
       </main>

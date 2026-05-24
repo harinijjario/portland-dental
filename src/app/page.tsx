@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { FeaturedTransformation } from "@/components/FeaturedTransformation";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 
 const fadeInUp = {
@@ -120,13 +120,13 @@ export default function HomePage() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
-        className="bg-surface-alt py-16"
+        className="bg-brand py-16"
       >
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 px-6 text-center lg:grid-cols-4">
           {trustStats.map((stat) => (
             <div key={stat.label}>
-              <p className="font-display text-4xl text-brand">{stat.value}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+              <p className="font-display text-4xl text-white">{stat.value}</p>
+              <p className="mt-2 text-sm text-white/70">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -185,40 +185,8 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* ─── BEFORE / AFTER ─── */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeInUp}
-        className="bg-surface-alt py-32"
-      >
-        <div className="mx-auto max-w-4xl px-6 md:px-12 lg:px-20">
-          <p className="text-center font-sans text-xs font-medium uppercase tracking-[0.3em] text-brand">
-            TRANSFORMATIONS
-          </p>
-
-          <h2 className="mt-6 text-center font-display text-4xl leading-[1.15] text-foreground md:text-5xl">
-            See the Difference
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-muted-foreground">
-            Real results from real patients. Drag the slider to reveal the
-            transformation.
-          </p>
-
-          <BeforeAfterSlider className="mx-auto mt-12 max-w-3xl" />
-
-          <div className="mt-10 text-center">
-            <Link
-              href="/gallery"
-              className="inline-block border-b border-brand/30 pb-1 text-sm font-medium text-brand transition-colors hover:border-brand"
-            >
-              View Full Gallery
-            </Link>
-          </div>
-        </div>
-      </motion.section>
+      {/* ─── FEATURED TRANSFORMATION ─── */}
+      <FeaturedTransformation />
 
       {/* ─── TREATMENTS PREVIEW ─── */}
       <motion.section

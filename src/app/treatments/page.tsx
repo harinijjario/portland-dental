@@ -200,38 +200,65 @@ export default function TreatmentsPage() {
 
       <main>
         {/* ─── Hero ─── */}
-        <section className="bg-white py-32 pt-40">
-          <div className="mx-auto max-w-3xl text-center px-6">
-            <motion.p
+        <section className="bg-white pb-16 pt-8 md:pt-10">
+          <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+            <motion.div
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-xs tracking-[0.3em] text-brand font-medium uppercase"
+              className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-16"
             >
-              Our Treatments
-            </motion.p>
-            <motion.h1
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="font-display text-5xl md:text-6xl leading-[1.1] mt-6"
-            >
-              Comprehensive Dental Care
-            </motion.h1>
-            <motion.p
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-lg text-muted-foreground mt-8 max-w-2xl mx-auto leading-relaxed"
-            >
-              From preventative care to advanced cosmetic treatments, we offer a
-              complete range of services tailored to your individual needs.
-            </motion.p>
+              {/* Image — top on mobile, right on desktop */}
+              <ImagePlaceholder
+                prompt="A panoramic view of a modern, bright dental treatment room with state-of-the-art equipment. Clean lines, cerulean blue accents, natural light flooding through large windows. Architectural interior photography."
+                label="Our Treatment Rooms"
+                aspectRatio="aspect-[4/3]"
+                className="lg:order-2"
+              />
+
+              {/* Content — below image on mobile, left on desktop */}
+              <div className="mt-10 lg:order-1 lg:mt-0">
+                <p className="text-xs tracking-[0.3em] text-brand font-medium uppercase">
+                  Our Treatments
+                </p>
+                <h1 className="font-display text-5xl md:text-6xl leading-[1.1] mt-6">
+                  Comprehensive Dental Care
+                </h1>
+                <p className="text-lg text-muted-foreground mt-8 max-w-lg leading-relaxed">
+                  From preventative care to advanced cosmetic treatments, we offer a
+                  complete range of services tailored to your individual needs.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
+
+        {/* ─── Stats Bar ─── */}
+        <motion.section
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="bg-brand py-14"
+        >
+          <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 px-6 text-center md:flex-row md:gap-16">
+            <div>
+              <p className="font-display text-3xl text-white">2,500+</p>
+              <p className="mt-1 text-sm text-white/70">Patients Treated</p>
+            </div>
+            <div className="hidden h-8 w-px bg-white/20 md:block" />
+            <div>
+              <p className="font-display text-3xl text-white">15+</p>
+              <p className="mt-1 text-sm text-white/70">Years Combined Experience</p>
+            </div>
+            <div className="hidden h-8 w-px bg-white/20 md:block" />
+            <div>
+              <p className="font-display text-3xl text-white">98%</p>
+              <p className="mt-1 text-sm text-white/70">Patient Satisfaction</p>
+            </div>
+          </div>
+        </motion.section>
 
         {/* ─── Treatment Sections ─── */}
         {treatmentSections.map((section) => (

@@ -121,23 +121,61 @@ export default function GalleryPage() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <section className="bg-white py-32 pt-40">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs tracking-[0.3em] text-brand">
-              SMILE GALLERY
-            </p>
-            <h1 className="font-display mt-6 text-5xl leading-[1.1] md:text-6xl">
-              Real Portland Results.
-              <br />
-              Restoring Confidence
-            </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Browse our collection of smile transformations. Each case
-              represents a unique journey, tailored to the individual patient.
-            </p>
+        <section className="bg-white pb-16 pt-8 md:pt-10">
+          <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
+              {/* Left — Image */}
+              <ImagePlaceholder
+                prompt="A close-up of a confident, radiant smile. Soft studio lighting, shallow depth of field. Beauty editorial photography showing naturally white, perfectly aligned teeth."
+                label="Smile Gallery"
+                aspectRatio="aspect-[4/3]"
+              />
+
+              {/* Right — Content */}
+              <div className="mt-10 lg:mt-0">
+                <p className="text-xs tracking-[0.3em] text-brand">
+                  SMILE GALLERY
+                </p>
+                <h1 className="font-display mt-6 text-5xl leading-[1.1] md:text-6xl">
+                  Real Portland Results.
+                  <br />
+                  Restoring Confidence
+                </h1>
+                <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
+                  Browse our collection of smile transformations. Each case
+                  represents a unique journey, tailored to the individual patient.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </motion.div>
+
+      {/* ─── Stats Bar ─── */}
+      <motion.section
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="bg-brand py-14"
+      >
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 px-6 text-center md:flex-row md:gap-16">
+          <div>
+            <p className="font-display text-3xl text-white">200+</p>
+            <p className="mt-1 text-sm text-white/70">Smile Transformations</p>
+          </div>
+          <div className="hidden h-8 w-px bg-white/20 md:block" />
+          <div>
+            <p className="font-display text-3xl text-white">4.9</p>
+            <p className="mt-1 text-sm text-white/70">Google Rating</p>
+          </div>
+          <div className="hidden h-8 w-px bg-white/20 md:block" />
+          <div>
+            <p className="font-display text-3xl text-white">100%</p>
+            <p className="mt-1 text-sm text-white/70">Bespoke Treatment Plans</p>
+          </div>
+        </div>
+      </motion.section>
 
       {/* ─── Gallery Grid ─── */}
       <motion.div

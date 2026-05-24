@@ -74,26 +74,39 @@ export default function AboutPage() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="bg-white py-32 pt-40">
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="mx-auto max-w-3xl px-6 text-center"
-          >
-            <p className="text-xs font-medium tracking-[0.3em] text-brand">
-              ABOUT US
-            </p>
-            <h1 className="mt-6 font-display text-5xl leading-[1.1] md:text-6xl">
-              A Practice Built on Trust
-            </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              For over two decades, Portland Dental Practice has been dedicated
-              to delivering exceptional dental care in a warm, professional
-              environment.
-            </p>
-          </motion.div>
+        <section className="bg-white pb-16 pt-8 md:pt-10">
+          <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-16"
+            >
+              {/* Image — top on mobile, right on desktop */}
+              <ImagePlaceholder
+                prompt="The welcoming interior of a modern dental practice waiting area. Comfortable seating, natural materials, potted plants, soft lighting. A blend of clinical professionalism and warm hospitality. Interior design photography."
+                label="Our Practice"
+                aspectRatio="aspect-[4/3]"
+                className="lg:order-2"
+              />
+
+              {/* Content — below image on mobile, left on desktop */}
+              <div className="mt-10 lg:order-1 lg:mt-0">
+                <p className="text-xs font-medium tracking-[0.3em] text-brand">
+                  ABOUT US
+                </p>
+                <h1 className="mt-6 font-display text-5xl leading-[1.1] md:text-6xl">
+                  A Practice Built on Trust
+                </h1>
+                <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
+                  For over two decades, Portland Dental Practice has been dedicated
+                  to delivering exceptional dental care in a warm, professional
+                  environment.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </section>
 
         {/* ── Our Story ── */}
@@ -147,7 +160,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Values ── */}
-        <section className="bg-white py-32">
+        <section className="bg-brand py-32">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
@@ -156,10 +169,10 @@ export default function AboutPage() {
             className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20"
           >
             <div className="text-center">
-              <p className="text-xs font-medium tracking-[0.3em] text-brand">
+              <p className="text-xs font-medium tracking-[0.3em] text-white/70">
                 OUR VALUES
               </p>
-              <h2 className="mt-6 font-display text-4xl leading-[1.15] md:text-5xl">
+              <h2 className="mt-6 font-display text-4xl leading-[1.15] text-white md:text-5xl">
                 What Guides Us
               </h2>
             </div>
@@ -173,11 +186,11 @@ export default function AboutPage() {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-80px" }}
                 >
-                  <span className="font-display text-6xl text-brand/15">
+                  <span className="font-display text-6xl text-white/15">
                     {value.number}
                   </span>
-                  <h3 className="mt-2 font-display text-2xl">{value.title}</h3>
-                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  <h3 className="mt-2 font-display text-2xl text-white">{value.title}</h3>
+                  <p className="mt-4 text-base leading-relaxed text-white/70">
                     {value.description}
                   </p>
                 </motion.div>

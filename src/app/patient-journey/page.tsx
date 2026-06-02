@@ -217,7 +217,7 @@ export default function PatientJourneyPage() {
             relationship we build is founded on care.&rdquo;
           </p>
           <p className="mt-8 text-sm font-medium tracking-wide text-white/70">
-            DR. JAMES HARTLEY &mdash; PRINCIPAL DENTIST
+            DR. KIAN DHINSA &mdash; PRINCIPAL DENTIST
           </p>
         </div>
       </motion.section>
@@ -322,23 +322,31 @@ export default function PatientJourneyPage() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
-        className="bg-brand py-24"
+        className="bg-slate-900 py-28"
       >
-        <div className="mx-auto max-w-4xl px-6 text-center md:px-12 lg:px-20">
-          <h2 className="font-display text-4xl text-white md:text-5xl">
-            Begin Your Journey Today
-          </h2>
+        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+          <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="font-display text-4xl leading-[1.1] text-white md:text-5xl lg:text-6xl">
+                Begin Your
+                <br />
+                Journey Today
+              </h2>
+              <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/60">
+                Take the first step towards a healthier, more confident smile.
+                Our team is ready to guide you every step of the way.
+              </p>
+            </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            Take the first step towards a healthier, more confident smile.
-          </p>
-
-          <Link
-            href="/contact"
-            className="mt-10 inline-block bg-white px-8 py-3.5 text-sm font-medium tracking-wide text-brand transition-colors duration-300 hover:bg-white/90"
-          >
-            Request a Consultation
-          </Link>
+            <div className="shrink-0">
+              <Link
+                href="/contact"
+                className="rounded-full bg-brand px-10 py-5 text-sm font-medium tracking-wide text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-brand-dark"
+              >
+                Request a Consultation
+              </Link>
+            </div>
+          </div>
         </div>
       </motion.section>
 

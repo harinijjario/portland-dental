@@ -17,7 +17,7 @@ const fadeInUp = {
 
 const teamMembers = [
   {
-    name: "Dr. James Hartley",
+    name: "Dr. Kian Dhinsa",
     role: "Principal Dentist",
     prompt:
       "Professional headshot of a distinguished male dentist in his 50s wearing a white coat. Warm, confident smile. Studio lighting, neutral grey background.",
@@ -247,27 +247,36 @@ export default function AboutPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="bg-brand py-24">
+        <section className="bg-slate-900 py-28">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="mx-auto max-w-3xl px-6 text-center"
+            className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20"
           >
-            <h2 className="font-display text-4xl leading-[1.15] text-white md:text-5xl">
-              Get to Know Us
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-              We would love to welcome you to our practice. Book a consultation
-              and discover how we can help you achieve the smile you deserve.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-10 inline-flex rounded-lg bg-white px-8 py-3.5 text-sm font-medium tracking-wide text-brand transition-colors duration-300 hover:bg-white/90"
-            >
-              Book an Assessment
-            </Link>
+            <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h2 className="font-display text-4xl leading-[1.1] text-white md:text-5xl lg:text-6xl">
+                  Get to
+                  <br />
+                  Know Us
+                </h2>
+                <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/60">
+                  We would love to welcome you to our practice. Book a consultation
+                  and discover how we can help you achieve the smile you deserve.
+                </p>
+              </div>
+
+              <div className="shrink-0">
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-brand px-10 py-5 text-sm font-medium tracking-wide text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-brand-dark"
+                >
+                  Book an Assessment
+                </Link>
+              </div>
+            </div>
           </motion.div>
         </section>
       </main>
